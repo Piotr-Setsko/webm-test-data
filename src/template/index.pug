@@ -1,33 +1,21 @@
 doctype html
 html
   head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible" content="IE=edge")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    - const data = htmlWebpackPlugin.options.data;
-    title #{data.page_meta.title}
-    meta(name="keywords" content=`${data.page_meta.meta_keywords}`)
-    meta(name="description" content=`${data.page_meta.meta_description}`)
+  include components/head/head.pug
   body
-    header.main-header
-      h1.main-header_title #{data.page_meta.h1}
-    nav
-      ul.main-nav
-        each item in data.nav
-          li.main-nav__item
-            a(href=item.href) #{item.text}
+  include components/header/header.pug
 
-    mixin list(items)
-      ul.breadcrumbs
-        each item, index in items
-          li.breadcrumbs__item(class= (items.length === index + 1) ? 'breadcrumbs__item_last' : false )
-            a(href=item.href)= item.text
+  mixin list(items)
+    ul.breadcrumbs
+      each item, index in items
+        li._item(class= (items.length === index + 1) ? 'breadcrumbs__item--last' : false )
+          a(href=item.href)= item.text
 
-    +list(data.breadcrumbs)
+  +list(data.breadcrumbs)
 
     aside
       form.form-search(action="#")
-        p.form-search__result 26 Results Found
+        p._result 26 Results Found
         formfield
 
 

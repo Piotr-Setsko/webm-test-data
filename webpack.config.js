@@ -20,10 +20,19 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
-        options: {
-          pretty: true
-        }
+        use: [
+          {
+            loader:'raw-loader',
+          },
+          {
+            loader: 'pug-bem-plain-loader',
+            options: {
+              data: {
+                data: require('./src/public/data/data.json'),
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
@@ -37,7 +46,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      data: require('./src/public/data/data.json'),
       template: 'src/template/index.pug',
       filename: 'index.html'
     }),
