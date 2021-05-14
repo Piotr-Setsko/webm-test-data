@@ -4,12 +4,12 @@ form.form-search(action="#")
     legend._legend Param 1
 
     mixin legend(x, type)
-      - let n = 0;
-        while n < x
-          p= n++
-            label(for=`${type}_${n}`)._label
-              input(id=`${type}_${n}` type=`${type}`, name=`value-${n}` class=`form-search__${type}-item`)
-              | value #{n}
+      - let n = 1;
+        while n <= x
+          label(for=`${type}_${n}`)._label
+            input(id=`${type}_${n}` type=`${type}`, name=`value-${n}` class=`form-search__${type}-item`)
+            span._text= n++
+
     +legend(5, 'checkbox')
   fieldset._field
     legend._legend Param 2

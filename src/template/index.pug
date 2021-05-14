@@ -1,9 +1,9 @@
 doctype html
 html
   head
-  include components/head/head.pug
+  include components/head/head
   body
-  include components/header/header.pug
+  include components/header/header
 
   mixin list(items)
     ul.breadcrumbs
@@ -14,8 +14,10 @@ html
   +list(data.breadcrumbs)
 
   aside
-    include components/form-search/form-search.pug
+    include components/form-search/form-search
 
+  main
+    include components/pagination/pagination
 
 
 

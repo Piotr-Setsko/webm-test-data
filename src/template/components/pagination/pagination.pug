@@ -1,0 +1,10 @@
+ul.pagination
+  - let n = 0
+  while n < 4
+    li._item
+      a(href="#")._link
+        span= n++
+        if n == 1
+          span= '<'
+        else if n == 4
+          span= '>'
