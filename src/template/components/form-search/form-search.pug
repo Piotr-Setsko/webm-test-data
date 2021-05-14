@@ -1,0 +1,30 @@
+form.form-search(action="#")
+  p._result 26 Results Found
+  fieldset._field
+    legend._legend Param 1
+
+    mixin legend(x, type)
+      - let n = 0;
+        while n < x
+          p= n++
+            label(for=`${type}_${n}`)._label
+              input(id=`${type}_${n}` type=`${type}`, name=`value-${n}` class=`form-search__${type}-item`)
+              | value #{n}
+    +legend(5, 'checkbox')
+  fieldset._field
+    legend._legend Param 2
+    +legend(3, 'radio')
+  fieldset._field
+    legend._legend Param 3
+      p
+        label(for="range_1")._label
+          input#range_1(type="number" name="min")._range-item
+        label(for="range_2")._label
+          input#range_2(type="number" name="max")._range-item
+  fieldset._field
+    legend._legend Param 4
+      p
+        label(for="range_1")._label
+          input#keyword(type="text" name="keyword")._keyword-item
+  p
+    input(type="submit" value="search")
