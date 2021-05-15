@@ -1,0 +1,20 @@
+.breadcrumb {
+  ul  {
+    align-items: baseline;
+  }
+  &__item {
+    padding: 10px 1em;
+    &:not(.is-active) {
+      &:hover a {
+        color: $primary;
+      }
+      &:active a {
+        color: $visit;
+      }
+    }
+    a {
+      margin-left: 1.5em;
+      font-size: 0.75em;
+    }
+  }
+}

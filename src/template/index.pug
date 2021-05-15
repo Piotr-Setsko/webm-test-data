@@ -5,13 +5,7 @@ html
   body
     include components/header/header
 
-  mixin list(items)
-    ul.breadcrumbs
-      each item, index in items
-        li._item(class= (items.length === index + 1) ? 'breadcrumbs__item--last' : false )
-          a(href=item.href)= item.text
-
-  +list(data.breadcrumbs)
+    include components/breadcrumb/breadcrumb
 
   aside
     include components/form-search/form-search
