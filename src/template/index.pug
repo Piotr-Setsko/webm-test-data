@@ -2,25 +2,26 @@ doctype html
 html
   head
     include components/head/head
-  body
+  body.has-background-grey-lighter
     include components/header/header
 
     include components/breadcrumb/breadcrumb
 
-  aside
-    include components/form-search/form-search
+  main.container.is-flex.is-justify-content-space-around
+    aside
+      include components/form-search/form-search
 
-  main
-    h2.title.is-3 #{data.page_meta.h1}
-    include components/pagination/pagination
+    section.product
+      h2.title.is-3 #{data.page_meta.h1}
+      include components/pagination/pagination
 
-    .sort
-      p._title Sort by
-      select(size="1" name="Sort options")._input
-        option(disabled selected) Sort options
-        option(value="track") Track
+      .sort
+        p._title Sort by
+        select(size="1" name="Sort options")._input
+          option(disabled selected) Sort options
+          option(value="track") Track
 
-    include components/card/card
+      include components/card/card
 
 
 

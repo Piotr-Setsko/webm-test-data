@@ -2,7 +2,7 @@
 @import "~bulma/bulma";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
-$body-family: 'Roboto', sans-serif;
+$family-sans-serif: 'Roboto', sans-serif;
 
 $primary: #56CCF2;
 $link: #2F80ED;
@@ -18,9 +18,10 @@ $primary-light: #56CCF21A;
 $visit-light: #C0A4DA1A;
 
 body {
-  font-family: $body-family;
+  font-family: $family-sans-serif;
 }
 
 @import "./template/components/header/header";
 @import "./template/components/breadcrumb/breadcrumb";
+@import "./template/components/form-search/form-search"
 
