@@ -1,8 +1,8 @@
 header.header
-  h1._title #{data.page_meta.h1}
+  h1.title.is-3 #{data.page_meta.h1}
   img(src="src/public/images/header.jpg", alt="logo")._logo
-  nav._nav
-    ul._nav-list
-        each item in data.nav
-          li._nav-list-item
-            a(href=item.href) #{item.text}
+  nav(role="navigation" aria-label="main navigation").navbar
+      ul._menu
+          each item in data.nav
+            li._item
+              a(href=item.href) #{item.text}
