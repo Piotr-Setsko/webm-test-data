@@ -1,2 +1,25 @@
 @charset "utf-8";
 @import "~bulma/bulma";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+$body-family: 'Roboto', sans-serif;
+
+$primary: #56CCF2;
+$link: #2F80ED;
+$black: #333333;
+$white: #FFFFFF;
+$text: #4F4F4F;
+$disable: #828282;
+$border: #BDBDBD;
+$background: #D9D9D9;
+$visit: #C0A4DA;
+
+$primary-light: #56CCF21A;
+$visit-light: #C0A4DA1A;
+
+body {
+  font-family: $body-family;
+}
+
+@import "./template/components/header/header";
+

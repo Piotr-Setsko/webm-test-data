@@ -1,8 +1,12 @@
 header.header
-  h1.title.is-3 #{data.page_meta.h1}
   img(src="src/public/images/header.jpg", alt="logo")._logo
-  nav(role="navigation" aria-label="main navigation").navbar
-      ul._menu
-          each item in data.nav
-            li._item
-              a(href=item.href) #{item.text}
+  nav._nav.navbar
+    ._nav-wrapper.navbar-brand
+      a(role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample")._nav-button.navbar-burger
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    ._nav-list.navbar-menu
+      each item in data.nav
+        li._nav-item.navbar-item
+          a(href=item.href) #{item.text}

@@ -1,9 +1,9 @@
 doctype html
 html
   head
-  include components/head/head
+    include components/head/head
   body
-  include components/header/header
+    include components/header/header
 
   mixin list(items)
     ul.breadcrumbs
@@ -17,6 +17,7 @@ html
     include components/form-search/form-search
 
   main
+    h2.title.is-3 #{data.page_meta.h1}
     include components/pagination/pagination
 
     .sort
