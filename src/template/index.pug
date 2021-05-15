@@ -19,6 +19,15 @@ html
   main
     include components/pagination/pagination
 
+    .sort
+      p._title Sort by
+      select(size="1" name="Sort options")._input
+        option(disabled selected) Sort options
+        option(value="track") Track
+
+    include components/card/card
+
+
 
 
 

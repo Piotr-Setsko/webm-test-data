@@ -1,0 +1,14 @@
+section.card
+  each item in data.stock
+    article._item
+      img(src=`src/public/images/${item.image}`, alt=`${item.model}`)._image
+      ._info
+        h2._title #{item.title}
+        p._price #{item.price_currency} #{item.price}
+        each content in data.page_text
+          p._descript #{content.content}
+
+        ul._tag-list
+          li._tag-item #{item.year}
+          li._tag-item #{item.mileage} #{item.mileage_measure}
+          li._tag-item #{item.axle_configuration}
