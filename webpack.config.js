@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: "development",
@@ -27,6 +28,8 @@ module.exports = {
           {
             loader: 'pug-bem-plain-loader',
             options: {
+              e: '-',
+              m: '++',
               data: {
                 data: require('./src/public/data/data.json'),
               },
@@ -40,14 +43,28 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            }
+          },
+        ],
+      }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/template/index.pug',
       filename: 'index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'css/mystyles.css'
     }),
     new CleanWebpackPlugin(),
   ],

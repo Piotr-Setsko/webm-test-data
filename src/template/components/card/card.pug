@@ -1,14 +1,19 @@
-section.card
+section.card-section
   each item in data.stock
-    article._item
-      img(src=`src/public/images/${item.image}`, alt=`${item.model}`)._image
-      ._info
-        h2._title #{item.title}
+    article.card
+      ._image
+        figure.image.is-128x128
+          img(src=`src/public/images/${item.image}`, alt=`${item.model}`)._image
+          ._info
+      header.card-header
+        h2.card-header-title #{item.title}
         p._price #{item.price_currency} #{item.price}
-        each content in data.page_text
-          p._descript #{content.content}
 
-        ul._tag-list
-          li._tag-item #{item.year}
-          li._tag-item #{item.mileage} #{item.mileage_measure}
-          li._tag-item #{item.axle_configuration}
+      each content in data.page_text
+        .card-content
+          p.content #{content.content}
+      footer.card-footer
+      ul._list
+        li.card-footer-item #{item.year}
+        li.card-footer-item #{item.mileage} #{item.mileage_measure}
+        li.card-footer-item #{item.axle_configuration}
