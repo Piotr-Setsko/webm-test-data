@@ -1,34 +1,35 @@
-form.form-search(action="#").field.section
-  p._result 26 Results Found
+form.form-search(action="#")
+  p._result.is-6 26 Results Found
   fieldset._field.field
-    legend._legend.label Param 1
+    legend._legend.is-6 Param 1
 
-    mixin legend(x, type)
-      - let n = 1;
-        while n <= x
-          label(for=`${type}_${n}` class=`${type}`)._label
-            if (type == 'radio')
-              input(id=`${type}_${n}` type=`${type}`, name=`radio-value` class=`form-search__${type}-item ${type}`)
-              span._text= n++
-            else
-              input(id=`${type}_${n}` type=`${type}`, name=`value-${n}` class=`form-search__${type}-item ${type}`)
-              span._text= n++
+      mixin legend(x, type)
+        - let n = 1;
+          ._wrapper.control
+            while n <= x
+              if (type == 'radio')
+                input(id=`${type}_${n}` type=`${type}`, name=`radio-value` class=`form-search__${type}-item ${type}`)
+                label(for=`${type}_${n}` class=`${type}`)._label= n++
+              else
+                input(id=`${type}_${n}` type=`${type}`, name=`value-${n}` class=`form-search__${type}-item ${type}`)
+                label(for=`${type}_${n}` class=`${type}`)._label= n++
 
     +legend(5, 'checkbox')
   fieldset._field
-    legend._legend.label Param 2
+    legend._legend.subtitle.is-6 Param 2
     +legend(3, 'radio')
   fieldset._field
-    legend._legend.label Param 3
-      p
-        label(for="range_1")._label
+    legend._legend.subtitle.is-6 Param 3
+      label(for="range_1")._label
+        ._wrapper.control
           input#range_1(type="number" name="min")._range-item.input.is-small
-        label(for="range_2")._label
+      label(for="range_2")._label
+        ._wrapper.control
           input#range_2(type="number" name="max")._range-item.input.is-small
   fieldset._field
-    legend._legend.label Param 4
-      p
-        label(for="range_1")._label
+    legend._legend.subtitle.is-6 Param 4
+      label(for="range_1")._label
+        ._wrapper.control
           input#keyword(type="text" name="keyword")._keyword-item.input.is-small
-  p
+  ._wrapper.control
     input(type="submit" value="search")._submit-item.button.is-link

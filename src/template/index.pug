@@ -7,21 +7,21 @@ html
 
     include components/breadcrumb/breadcrumb
 
-  main.container.is-flex.is-justify-content-space-between
-    aside.section.is-medium
+    main.is-flex.is-align-items-flex-start
+
       include components/form-search/form-search
 
-    section.product.section
-      h2.title.is-3 #{data.page_meta.h1}
-      include components/pagination/pagination
+      section.container
+        h2.title.is-4 #{data.page_meta.h1}
+        include components/pagination/pagination
 
-      .sort
-        p._title Sort by
-        select(size="1" name="Sort options")._input
-          option(disabled selected) Sort options
-          option(value="track") Track
+        .sort
+          p._title Sort by
+          select(size="1" name="Sort options")._input
+            option(disabled selected) Sort options
+            option(value="track") Track
 
-      include components/card/card
+        include components/card/card
 
 
 
