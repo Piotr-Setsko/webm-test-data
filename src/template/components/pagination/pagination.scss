@@ -1,0 +1,18 @@
+.pagination {
+
+  &__link {
+    background-color: $white;
+
+    &[disabled] {
+      background-color: $white;
+
+      &:hover {
+        background-color: $white;
+      }
+    }
+
+    &:hover {
+      background-color: $primary;
+    }
+  }
+}
