@@ -28,6 +28,7 @@ module.exports = {
           {
             loader: 'pug-bem-plain-loader',
             options: {
+              b: true,
               data: {
                 data: require('./src/public/data/data.json'),
               },

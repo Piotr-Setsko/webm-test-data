@@ -1,31 +1,41 @@
-form.form-search(action="#")
+form.b-form-search(action="#")
   p._result.is-6 26 Results Found
-  fieldset._field.field
-    legend._legend.is-6 Param 1
+  fieldset._field.field.dropdown.is-active
+    ._dropdown-trigger.dropdown-trigger
+      legend._legend.is-6.button Param 1
+        span.icon.is-small
+          i.fas.fa-chevron-down
 
-      mixin legend(x, type)
-        - let n = 1;
-          ._wrapper.control
-            while n <= x
-              if (type == 'radio')
-                input(id=`${type}_${n}` type=`${type}`, name=`radio-value` class=`form-search__${type}-item ${type}`)
-                label(for=`${type}_${n}` class=`${type}`)._label= n++
-              else
-                input(id=`${type}_${n}` type=`${type}`, name=`value-${n}` class=`form-search__${type}-item ${type}`)
-                label(for=`${type}_${n}` class=`${type}`)._label= n++
+        mixin legend(x, type)
+          - let n = 1;
+          ._dropdown-menu.dropdown-menu
+            ._wrapper.control
+              while n <= x
+                if (type == 'radio')
+                  input(id=`${type}_${n}` type=`${type}`, name=`radio-value` class=`form-search__${type}-item ${type}`)
+                  label(for=`${type}_${n}` class=`${type}`)._label.dropdown-item= n++
+                else
+                  input(id=`${type}_${n}` type=`${type}`, name=`value-${n}` class=`form-search__${type}-item ${type}`)
+                  label(for=`${type}_${n}` class=`${type}`)._label.dropdown-item= n++
 
     +legend(5, 'checkbox')
-  fieldset._field
-    legend._legend.subtitle.is-6 Param 2
-    +legend(3, 'radio')
-  fieldset._field
-    legend._legend.subtitle.is-6 Param 3
-      label(for="range_1")._label
-        ._wrapper.control
-          input#range_1(type="number" name="min")._range-item.input.is-small
-      label(for="range_2")._label
-        ._wrapper.control
-          input#range_2(type="number" name="max")._range-item.input.is-small
+  fieldset._field.field.dropdown.is-active
+    ._dropdown-trigger.dropdown-trigger
+      legend._legend.is-6.button Param 2
+        span.icon.is-small
+          i.fas.fa-chevron-down
+      +legend(3, 'radio')
+  fieldset._field.field.dropdown.is-active
+    ._dropdown-trigger.dropdown-trigger
+      legend._legend.is-6.button Param 3
+        span.icon.is-small
+          i.fas.fa-chevron-down
+      ._dropdown-menu.dropdown-menu
+        ._wrapper.control.dropdown-item.is-flex
+          label(for="range_1")._label
+            input#range_1(type="number" name="min")._range-item.input.is-small
+          label(for="range_2")._label
+            input#range_2(type="number" name="max")._range-item.input.is-small
   fieldset._field
     legend._legend.subtitle.is-6 Param 4
       label(for="range_1")._label
