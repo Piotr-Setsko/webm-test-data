@@ -19,27 +19,36 @@ form.b-form-search(action="#")
                   label(for=`${type}_${n}` class=`${type}`)._label.dropdown-item= n++
 
     +legend(5, 'checkbox')
+
   fieldset._field.field.dropdown.is-active
     ._dropdown-trigger.dropdown-trigger
       legend._legend.is-6.button Param 2
         span.icon.is-small
           i.fas.fa-chevron-down
       +legend(3, 'radio')
+
   fieldset._field.field.dropdown.is-active
     ._dropdown-trigger.dropdown-trigger
       legend._legend.is-6.button Param 3
         span.icon.is-small
           i.fas.fa-chevron-down
-      ._dropdown-menu.dropdown-menu
-        ._wrapper.control.dropdown-item.is-flex
-          label(for="range_1")._label
-            input#range_1(type="number" name="min")._range-item.input.is-small
-          label(for="range_2")._label
-            input#range_2(type="number" name="max")._range-item.input.is-small
-  fieldset._field
-    legend._legend.subtitle.is-6 Param 4
-      label(for="range_1")._label
-        ._wrapper.control
-          input#keyword(type="text" name="keyword")._keyword-item.input.is-small
+    ._dropdown-menu.dropdown-menu
+      ._wrapper.control.dropdown-item.is-flex
+        label(for="range_1")._label
+          input#range_1(type="number" name="min" placeholder="min")._range-item.input.is-small
+        label(for="range_2")._label
+          input#range_2(type="number" name="max" placeholder="max")._range-item.input.is-small
+
+  fieldset._field.field.dropdown.is-active
+    ._dropdown-trigger.dropdown-trigger
+      legend._legend.is-6.button Param 4
+        span.icon.is-small
+          i.fas.fa-chevron-down
+    ._dropdown-menu.dropdown-menu
+      ._wrapper.control.dropdown-item
+        label(for="range_1")._label
+          ._wrapper.control
+        input#keyword(type="text" name="keyword" placeholder="keyword")._keyword-item.input.is-small
+
   ._wrapper.control
-    input(type="submit" value="search")._submit-item.button.is-link
+    input(type="submit" value="search")._submit-item.button
