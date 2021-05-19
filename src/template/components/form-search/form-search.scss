@@ -4,6 +4,7 @@
   padding: 1em 1em;
   background-color: $white;
   line-height: 0;
+  align-self: flex-start;
 
   &__field {
     display:  block;
@@ -11,6 +12,7 @@
 
   &__result {
     padding-bottom: 1em;
+    white-space: normal;
     font-weight: 500;
     border-bottom: 1px solid $border;
   }
@@ -113,6 +115,5 @@
         border-color: transparent;
         box-shadow: transparent;
       }
-  }
-
+    }
 }

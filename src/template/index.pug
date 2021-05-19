@@ -7,21 +7,16 @@ html
 
     include components/breadcrumb/breadcrumb
 
-    main.is-flex.is-align-items-flex-start
+    main.is-flex.is-justify-content-space-between.container.is-fullhd
 
       include components/form-search/form-search
 
       section.container
         h2.title.is-4 #{data.page_meta.h1}
         .level.mb-0
-          include components/pagination/pagination
 
-          .b-sort.level-right
-            .level-item
-              p._title Sort by
-              select(size="1" name="Sort options")._input
-                option(disabled selected) Sort options
-                option(value="track") Track
+          include components/pagination/pagination
+          include components/sort/sort
 
         include components/card/card
 

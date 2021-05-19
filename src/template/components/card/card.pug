@@ -1,19 +1,18 @@
 section.b-card-section
   each item in data.stock
-    article.card
-      ._image
-        figure.image.is-128x128
-          img(src=`src/public/images/${item.image}`, alt=`${item.model}`)._image
-          ._info
-      header.card-header
-        h2.card-header-title #{item.title}
-        p._price #{item.price_currency} #{item.price}
+    article.card.media
+      figure.media-left
+          img(src=`src/public/images/${item.image}`, alt=`${item.model}`)._image.image
+      ._info.media-content
+        header.card-header
+          h2.card-header-title #{item.title}
+          p._price #{item.price_currency} #{item.price}
 
-      each content in data.page_text
-        .card-content
-          p.content #{content.content}
-      footer.card-footer
-      ul._list
-        li.card-footer-item #{item.year}
-        li.card-footer-item #{item.mileage} #{item.mileage_measure}
-        li.card-footer-item #{item.axle_configuration}
+        each content in data.page_text
+          .card-content
+            p.content #{content.content}
+        footer.card-footer
+        ul._list
+          li.card-footer-item #{item.year}
+          li.card-footer-item #{item.mileage} #{item.mileage_measure}
+          li.card-footer-item #{item.axle_configuration}
