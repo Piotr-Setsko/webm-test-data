@@ -3,6 +3,7 @@ html
   head
     include components/head/head
   body.has-background-grey-lighter
+    - let n
     include components/header/header
 
     include components/breadcrumb/breadcrumb
@@ -13,13 +14,22 @@ html
 
       section.container
         h2.title.is-4 #{data.page_meta.h1}
-        .level.mb-0
 
+        .level.mb-0
           include components/pagination/pagination
           include components/sort/sort
 
         include components/card/card
 
+        .level.mb-0
+          include components/pagination/pagination
+          include components/sort/sort
+
+        each content in data.page_text
+          p.content #{content.content}
+
+    footer
+      
 
 
 
