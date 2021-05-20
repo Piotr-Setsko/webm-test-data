@@ -1,0 +1,17 @@
+.main-footer {
+  &__wrapper {
+    padding-top: 45px;
+    padding-bottom: 35px;
+    background-color: $white;
+  }
+
+  &__info-wrapper {
+    width: 30%;
+    margin-right: 2em;
+  }
+
+  &__bottom-wrapper {
+    padding: 10px 0;
+    background-color: $grey-lighter;
+  }
+}

@@ -1,0 +1,42 @@
+footer.b-main-footer
+  ._wrapper
+    .container.is-fullhd
+      h6._title.title.is-6 #{data.page_meta.h1}
+      article.is-flex
+        ._info-wrapper.is-block
+          p.mb-4.is-flex
+            span.icon-text
+              span.icon.is-small
+                i.fas.fa-map-marker-alt
+            span Company Adress: Lorem ipsum dolor sit amet 18600, Netherlands
+          p.mb-2
+            span.icon-text
+              span.icon.is-small
+                i.fas.fa-phone
+            |  +38 958 755-00-00
+          nav.is-flex
+            mixin image(name)
+              a.navbar-item
+                span.icon.is-medium
+                  img(src=`src/public/images/social_icon__${name}.svg`, alt=`${name}`)
+
+            +image('facebook')
+            +image('instagram')
+            +image('twitter')
+            +image('youtube')
+
+        p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione molestias soluta, provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis. Quis quo molestias repellat.
+
+  ._bottom-wrapper.content.has-text-centered
+    p © 2019 -
+      a(href="#")
+        |  Privacy Policy &nbsp;
+      | -
+      a(href="#")
+        |  Terms and Conditions
+
+
+
+
+
+
