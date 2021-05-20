@@ -15,18 +15,19 @@ html
       section.container
         h2.title.is-4 #{data.page_meta.h1}
 
-        .level.mb-0
+        .level.mb-5
           include components/pagination/pagination
           include components/sort/sort
 
         include components/card/card
 
-        .level.mb-0
+        .level.mb-5.mt-5
           include components/pagination/pagination
           include components/sort/sort
 
-        each content in data.page_text
-          p.content #{content.content}
+        article.mb-5
+          each content in data.page_text
+            p.content #{content.content}
 
     include components/footer/footer
 

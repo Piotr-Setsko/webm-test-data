@@ -1,18 +1,19 @@
 section.b-card-section
   each item in data.stock
-    article.card.media
+    article._wrapper.card.media
       figure.media-left.mr-0
           img(src=`src/public/images/${item.image}`, alt=`${item.model}`)._image.image
       ._info.media-content
-        header.card-header
-          h2.card-header-title #{item.title}
-          p._price #{item.price_currency} #{item.price}
-
-          //each content in data.page_text
         .card-content
+          header.is-flex.is-justify-content-space-between
+            h2.title.is-6 #{item.title}
+            p._price
+              strong #{item.price_currency} #{item.price}
+
+
           p.content #{data.page_text[0].content}
-        footer.card-footer
-        ul._list.tags.are-medium
-          li.card-footer-item.tag #{item.year}
-          li.card-footer-item.tag #{item.mileage} #{item.mileage_measure}
-          li.card-footer-item.tag #{item.axle_configuration}
+        footer.card-footer.ml-5
+          ul._list.tags.are-medium
+            li.card-footer-item.tag #{item.year}
+            li.card-footer-item.tag #{item.mileage} #{item.mileage_measure}
+            li.card-footer-item.tag #{item.axle_configuration}

@@ -1,3 +1,28 @@
+.card-section {
+  &__wrapper {
+    @media screen and (max-width: 760px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__list {
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__price {
+    line-height: 1.125;
+    font-size: 14px;
+    color: $text;
+  }
+
+  footer {
+    border: none;
+  }
+}
+
 figure {
   margin: 1em;
 }
