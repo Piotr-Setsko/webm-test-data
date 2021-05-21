@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: "development",
@@ -37,8 +38,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'npm',
+        test: /\.(eot|gif|otf|png|ttf|woff)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: './images',
+        },
       },
       {
         test: /\.(scss|css)$/,
@@ -58,6 +62,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/template/index.pug',
       filename: 'index.html'
@@ -65,6 +70,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/mystyles.css'
     }),
-    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+        patterns: [
+          { from: 'src/public/images', to: './images' },
+        ],
+      }
+    ),
   ],
 }
