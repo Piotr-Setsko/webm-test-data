@@ -21,6 +21,17 @@ body {
   font-family: $family-sans-serif;
 }
 
+.flex-wrapper {
+  @media screen and (max-width: 760px) {
+    flex-direction: column;
+    align-items: center;
+
+    & .container {
+      margin: 0 auto;
+    }
+  }
+}
+
 @import "./template/components/header/header";
 @import "./template/components/breadcrumb/breadcrumb";
 @import "./template/components/form-search/form-search";

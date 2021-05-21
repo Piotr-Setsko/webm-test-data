@@ -9,25 +9,25 @@ html
     include components/breadcrumb/breadcrumb
 
     main.is-flex.is-justify-content-space-between.container.is-fullhd
+      section.flex-wrapper.is-flex
+        include components/form-search/form-search
 
-      include components/form-search/form-search
+        section.container
+          h2.title.is-4 #{data.page_meta.h1}
 
-      section.container
-        h2.title.is-4 #{data.page_meta.h1}
+          .level.mb-5
+            include components/pagination/pagination
+            include components/sort/sort
 
-        .level.mb-5
-          include components/pagination/pagination
-          include components/sort/sort
+          include components/card/card
 
-        include components/card/card
+          .level.mb-5.mt-5
+            include components/pagination/pagination
+            include components/sort/sort
 
-        .level.mb-5.mt-5
-          include components/pagination/pagination
-          include components/sort/sort
-
-        article.mb-5
-          each content in data.page_text
-            p.content #{content.content}
+          article.mb-5
+            each content in data.page_text
+              p.content #{content.content}
 
     include components/footer/footer
 

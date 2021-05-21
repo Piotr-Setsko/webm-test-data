@@ -12,6 +12,7 @@
 
   &__result {
     padding-bottom: 1em;
+    padding-top: 1em;
     white-space: normal;
     font-weight: 500;
     border-bottom: 1px solid $border;
@@ -116,4 +117,32 @@
         box-shadow: transparent;
       }
     }
+
+    @media screen and (max-width: 760px) {
+      width: auto;
+
+      &__field {
+        margin-right: 0.5em;
+      }
+
+      &__phone-wrapper {
+        width: auto;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      &__legend {
+        width: 7em;
+      }
+
+      label[for=range_2],
+      label[for=range_1] {
+        width: 7em;
+     }
+
+     label[for=range_2] {
+       margin-right: 3em;
+     }
+   }
 }
